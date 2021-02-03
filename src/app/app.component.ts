@@ -12,7 +12,7 @@ export class AppComponent {
 
 
   registractionForm = new FormGroup({
-    userName: new FormControl('Thomas'),
+    userName: new FormControl(''),
     password: new FormControl(''),
     confirmPassword: new FormControl(''),
     address: new FormGroup({
@@ -21,4 +21,24 @@ export class AppComponent {
       postalCode: new FormControl('')
     })
   });
+
+  loadApiData() {
+    this.registractionForm.setValue({
+      userName: 'Thomas',
+      password: '123',
+      confirmPassword: '123',
+      address: {
+        city: 'City',
+        state: 'State',
+        postalCode: '000'
+      }
+    });
+    // this.registractionForm.patchValue({
+    //   userName: 'Thomas',
+    //   address: {
+    //     city: 'City',
+    //     state: 'State',
+    //   }
+    // });
+  }
 }
