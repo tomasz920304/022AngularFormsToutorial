@@ -8,9 +8,17 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class AppComponent {
   title = 'ReactiveFormsToutorial';
+
+
+
   registractionForm = new FormGroup({
-    userName :new FormControl('Thomas'),
-    password :new FormControl(''),
-    confirmPassword :new FormControl(''),
+    userName: new FormControl('Thomas'),
+    password: new FormControl(''),
+    confirmPassword: new FormControl(''),
+    address: new FormGroup({
+      city: new FormControl(''),
+      state: new FormControl(''),
+      postalCode: new FormControl('')
+    })
   });
 }
